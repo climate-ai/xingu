@@ -1,14 +1,17 @@
 import os
 import numpy as np
 import cv2
-from keras.applications import InceptionV3
-from keras.applications.inception_v3 import preprocess_input
+from keras.applications import ResNet50
+from keras.applications.resnet50 import preprocess_input
+
+#from keras.applications import ResNet50V2
+#from keras.applications.resnet_v2 import preprocess_input
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"  # select ID of GPU that shall be used
 
 # Setting up model
-model = InceptionV3(weights='imagenet', include_top=False, pooling='avg')
+model = ResNet50(weights='imagenet', include_top=False, pooling='avg')
 model.summary()
 
 # Get data
@@ -44,7 +47,7 @@ for idx in range(n_img):
 print('Embedded {} images.'.format(n_img))
 
 # Export features as numpy array
-np.save('../data/features/Kaggle/features_InceptionV3_pool_Kaggle.npy', X)
+np.save('../data/features/Kaggle/features_ImageNet-ResNet50_Kaggle.npy', X)
 
 # Export featuers in csv file
 #np.savetxt('features' + model_name + '_Kaggle.csv', features, delimiter=',')

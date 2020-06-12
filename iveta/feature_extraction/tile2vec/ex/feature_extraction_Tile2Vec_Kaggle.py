@@ -62,7 +62,7 @@ for idx in range(n_tiles):
 print('Embedded {} tiles.'.format(n_tiles))
 
 # Export features as numpy array
-np.save('features_Tile2Vec_Kaggle.npy', X)
+np.save('../../data/features/Kaggle/features_Tile2Vec_Kaggle.npy', X)
 
 # Export featuers in csv file
 #np.savetxt('features' + model_name + '_Kaggle.csv', features, delimiter=',')

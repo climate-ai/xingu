@@ -38,7 +38,7 @@ for idx in range(n_img):
 print('Embedded {} images.'.format(n_img))
 
 # Export features as numpy array
-np.save('features_EfficientNet_Kaggle.npy', X)
+np.save('../data/features/Kaggle/features_EfficientNet_Kaggle.npy', X)
 
 # Export featuers in csv file
 #np.savetxt('features' + model_name + '_Kaggle.csv', features, delimiter=',')
